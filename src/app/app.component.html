@@ -1,6 +1,54 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Ver pilotos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Carrgar nuevo piloto</a>
+  </li>
+</ul>
 
+
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <div class="col" *ngFor="let piloto of pilotos">
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img [src]="piloto.headshot_url" class="card-img-top" alt="Imagen del piloto" style="width: 100%; height: 250px; object-fit: contain;">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ piloto.first_name }}</h5>
+            <h5>{{ piloto.last_name }}</h5>
+            <h5>Acronimo: {{ piloto.name_acronym }}</h5>
+            <p class="card-text"><small class="text-body-secondary">id del piloto: {{ piloto.session_key }}</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">nombre</span>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+</div>
+<div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">apellido</span>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+</div>
+<div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+</div>
+<div class="input-group input-group-sm mb-3">
+  <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+</div>
+<!--
 <h2>pilotos</h2>
-<button type="button" class="btn btn-primary">Primary</button>
 <div class="card-container" style="display: flex; flex-wrap: wrap; gap: 16px;">
   <div class="card" style="width: 18rem;" *ngFor="let piloto of pilotos">
     <img [src]="piloto.headshot_url" class="card-img-top" alt="Imagen del piloto" style="width: 100%; height: 250px; object-fit: contain;">
@@ -9,7 +57,7 @@
     </div>
   </div>
 </div>
-
+-->
 
 
 <router-outlet><router-outlet />
